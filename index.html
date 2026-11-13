@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
   <meta charset="utf-8" />
@@ -11,7 +11,14 @@
   <meta property="og:description" content="Do primeiro contato à entrega das chaves. Minha Casa Minha Vida, aluguel e venda com avaliação grátis." />
   <meta property="og:image" content="https://joao-imoveis-cg.vercel.app/img/hero-bg-1280.jpg" />
   <meta property="og:locale" content="pt_BR" />
-  <script>document.documentElement.classList.add("js")</script>
+  <script>document.documentElement.classList.add("js");setTimeout(function(){document.documentElement.classList.add("ready")},3500)</script>
+  <style>
+    html{background:#0E1630}
+    body{margin:0;background:#0E1630}
+    svg{width:1.25em;height:1.25em}
+    .js:not(.ready) .hero__word,.js:not(.ready) .hero__fg,.js:not(.ready) [data-hero-copy],.js:not(.ready) .nav{opacity:0}
+  </style>
+  <link rel="stylesheet" href="/src/style.css" />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -133,56 +140,81 @@
         </div>
 
         <div class="listings__track" data-track>
-          <article class="card card--tall">
-            <figure class="card__img"><img src="/img/santa-emilia.webp" alt="Casa com portão de madeira e entrada de garagem no Santa Emília" loading="lazy" width="640" height="510" /></figure>
-            <div class="card__body">
-              <p class="card__tag card__tag--venda">À venda</p>
-              <h3>Santa Emília</h3>
-              <p>Casa ao lado da creche e do posto de saúde. Tudo que a rotina da família precisa a pé.</p>
-              <a class="card__cta" href="#" data-ask="a casa à venda no Santa Emília">Perguntar sobre esta casa</a>
-            </div>
+          <article class="card card--tall" data-id="santa-emilia">
+            <a class="card__link" href="#imovel-santa-emilia" data-open="santa-emilia" aria-haspopup="dialog">
+              <figure class="card__img">
+                <img src="/img/santa-emilia.webp" alt="Casa com portão de madeira e entrada de garagem no Santa Emília" loading="lazy" width="640" height="510" />
+                <span class="card__plus" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span>
+              </figure>
+              <div class="card__body">
+                <p class="card__tag card__tag--venda">À venda</p>
+                <h3>Santa Emília</h3>
+                <p class="card__sub">Casa</p>
+                <p class="card__text">Ao lado da creche e do posto de saúde.</p>
+                <span class="card__more">Ver detalhes</span>
+              </div>
+            </a>
           </article>
-
-          <article class="card">
-            <figure class="card__img"><img src="/img/algarve.webp" alt="Prédio do Residencial Algarve ao entardecer" loading="lazy" width="310" height="300" /></figure>
-            <div class="card__body">
-              <p class="card__tag card__tag--venda">Lançamento</p>
-              <h3>Residencial Algarve</h3>
-              <p>Apê a 4 minutos da UFMS: 2 quartos, varanda, vaga de garagem e condomínio fechado. ITBI e registro grátis, entrada parcelada em até 30x.</p>
-              <a class="card__cta" href="#" data-ask="o Residencial Algarve, perto da UFMS">Perguntar sobre este apê</a>
-            </div>
+          <article class="card" data-id="algarve">
+            <a class="card__link" href="#imovel-algarve" data-open="algarve" aria-haspopup="dialog">
+              <figure class="card__img">
+                <img src="/img/algarve.webp" alt="Prédio do Residencial Algarve ao entardecer" loading="lazy" width="310" height="300" />
+                <span class="card__plus" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span>
+              </figure>
+              <div class="card__body">
+                <p class="card__tag card__tag--venda">Lançamento</p>
+                <h3>Algarve</h3>
+                <p class="card__sub">Apartamento MRV</p>
+                <p class="card__text">A 4 minutos da UFMS, com ITBI e registro grátis.</p>
+                <span class="card__more">Ver detalhes</span>
+              </div>
+            </a>
           </article>
-
-          <article class="card card--wide">
-            <figure class="card__img"><img src="/img/leblon.webp" alt="Casa com garagem coberta e telhado colonial no bairro Leblon" loading="lazy" width="640" height="425" /></figure>
-            <div class="card__body">
-              <p class="card__tag card__tag--venda">À venda</p>
-              <h3>Bairro Leblon</h3>
-              <p>Casa com garagem coberta, frente ampla e rua asfaltada.</p>
-              <a class="card__cta" href="#" data-ask="a casa à venda no bairro Leblon">Perguntar sobre esta casa</a>
-            </div>
+          <article class="card card--wide" data-id="leblon">
+            <a class="card__link" href="#imovel-leblon" data-open="leblon" aria-haspopup="dialog">
+              <figure class="card__img">
+                <img src="/img/leblon.webp" alt="Casa com garagem coberta e telhado colonial no bairro Leblon" loading="lazy" width="640" height="425" />
+                <span class="card__plus" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span>
+              </figure>
+              <div class="card__body">
+                <p class="card__tag card__tag--venda">À venda</p>
+                <h3>Leblon</h3>
+                <p class="card__sub">Casa</p>
+                <p class="card__text">Garagem coberta, frente ampla e rua asfaltada.</p>
+                <span class="card__more">Ver detalhes</span>
+              </div>
+            </a>
           </article>
-
-          <article class="card">
-            <figure class="card__img"><img src="/img/aero-rancho.webp" alt="Casa cinza com área frontal no Aero Rancho" loading="lazy" width="640" height="395" /></figure>
-            <div class="card__body">
-              <p class="card__tag card__tag--aluguel">Para alugar</p>
-              <h3>Aero Rancho</h3>
-              <p>2 quartos, área na frente e acabamento novo. Pronta para mudar.</p>
-              <a class="card__cta" href="#" data-ask="a casa para alugar no Aero Rancho">Perguntar sobre esta casa</a>
-            </div>
+          <article class="card" data-id="aero-rancho">
+            <a class="card__link" href="#imovel-aero-rancho" data-open="aero-rancho" aria-haspopup="dialog">
+              <figure class="card__img">
+                <img src="/img/aero-rancho.webp" alt="Casa cinza com área frontal no Aero Rancho" loading="lazy" width="640" height="395" />
+                <span class="card__plus" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span>
+              </figure>
+              <div class="card__body">
+                <p class="card__tag card__tag--aluguel">Para alugar</p>
+                <h3>Aero Rancho</h3>
+                <p class="card__sub">Casa, 2 quartos</p>
+                <p class="card__text">Acabamento novo e pronta para mudar.</p>
+                <span class="card__more">Ver detalhes</span>
+              </div>
+            </a>
           </article>
-
-          <article class="card card--tall">
-            <figure class="card__img"><img src="/img/villagio-parati.webp" alt="Entrada de casa com jardim e caminho de tijolos no Villagio Parati" loading="lazy" width="640" height="460" /></figure>
-            <div class="card__body">
-              <p class="card__tag card__tag--aluguel">Para alugar</p>
-              <h3>Villagio Parati</h3>
-              <p>Casa térrea com jardim na entrada, em residencial tranquilo.</p>
-              <a class="card__cta" href="#" data-ask="a casa para alugar no Villagio Parati">Perguntar sobre esta casa</a>
-            </div>
+          <article class="card card--tall" data-id="villagio-parati">
+            <a class="card__link" href="#imovel-villagio-parati" data-open="villagio-parati" aria-haspopup="dialog">
+              <figure class="card__img">
+                <img src="/img/villagio-parati.webp" alt="Entrada de casa com jardim e caminho de tijolos no Villagio Parati" loading="lazy" width="640" height="460" />
+                <span class="card__plus" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span>
+              </figure>
+              <div class="card__body">
+                <p class="card__tag card__tag--aluguel">Para alugar</p>
+                <h3>Villagio Parati</h3>
+                <p class="card__sub">Casa térrea</p>
+                <p class="card__text">Jardim na entrada, em residencial tranquilo.</p>
+                <span class="card__more">Ver detalhes</span>
+              </div>
+            </a>
           </article>
-
           <article class="card card--more">
             <div class="card__body">
               <h3>Não achou o seu?</h3>
@@ -370,6 +402,37 @@
       <p class="foot__small">Disponibilidade e condições dos imóveis sujeitas a confirmação. Fotos dos imóveis: arquivo João Imóveis.</p>
     </div>
   </footer>
+
+  <div class="sheet" data-sheet hidden>
+    <div class="sheet__backdrop" data-close></div>
+    <article class="sheet__panel" role="dialog" aria-modal="true" aria-labelledby="sheet-title" data-lenis-prevent>
+      <button class="sheet__close" type="button" data-close aria-label="Fechar detalhes do imóvel">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
+      </button>
+      <figure class="sheet__media"><img data-s="img" alt="" /></figure>
+      <div class="sheet__body">
+        <div class="sheet__in">
+          <p class="sheet__meta"><span class="card__tag" data-s="tag"></span><span data-s="sub"></span></p>
+          <h2 id="sheet-title" class="sheet__title" data-s="title"></h2>
+          <p class="sheet__lead" data-s="lead"></p>
+        </div>
+        <dl class="sheet__specs sheet__in" data-s="specs"></dl>
+        <div class="sheet__in">
+          <h3 class="sheet__h">Destaques</h3>
+          <ul class="sheet__list" data-s="highlights"></ul>
+        </div>
+        <div class="sheet__cta sheet__in">
+          <a class="btn btn--ipe btn--lg" data-s="visit" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-wa"/></svg>
+            <span>Agendar uma visita</span>
+          </a>
+          <a class="btn btn--line btn--lg" data-s="ask" target="_blank" rel="noopener">Tirar uma dúvida</a>
+        </div>
+        <p class="sheet__note sheet__in">Informações publicadas no Instagram do João. Valores, condições e disponibilidade podem mudar: confirme pelo WhatsApp.</p>
+        <button class="sheet__next sheet__in" type="button" data-s="next"><span>Próximo imóvel</span><strong></strong></button>
+      </div>
+    </article>
+  </div>
 
   <a class="fab" href="#" data-ask="imóveis" aria-label="Conversar com o João no WhatsApp" data-fab>
     <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-wa"/></svg>

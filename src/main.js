@@ -1,7 +1,8 @@
-import "./style.css";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Lenis from "lenis";
+import { LISTINGS } from "./listings.js";
+import { initSheet } from "./sheet.js";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -120,12 +121,14 @@ const fontsReady = document.fonts ? document.fonts.ready : Promise.resolve();
 
 if (reduce) {
   onScroll(0);
+  document.documentElement.classList.add("ready");
 } else {
   gsap.set(chars, { yPercent: 115 });
   gsap.set(bg, { scale: 1.16, filter: "brightness(.55) saturate(.8)" });
   gsap.set(fg, { scale: 1.1, yPercent: 3, filter: "brightness(.55) saturate(.8)" });
   gsap.set(heroCopy, { opacity: 0, y: 40 });
   gsap.set(nav, { opacity: 0, y: -20 });
+  document.documentElement.classList.add("ready");
 
   Promise.all([ready, fontsReady]).then(() => {
     const tl = gsap.timeline({ defaults: { ease: "expo.out" } });
@@ -262,3 +265,6 @@ if (!reduce) {
 }
 
 window.addEventListener("load", () => ScrollTrigger.refresh());
+
+/* ---------- Fichas dos imóveis (sheet estilo Apple) ---------- */
+initSheet({ LISTINGS, waUrl, gsap, getLenis: () => lenis, reduce });
