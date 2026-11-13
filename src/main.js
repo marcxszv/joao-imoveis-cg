@@ -221,32 +221,6 @@ if (!reduce) {
   $$(".step").forEach((s) => s.classList.add("is-on"));
 }
 
-/* ---------- Services: imagem que segue o cursor ---------- */
-mm.add("(min-width: 901px) and (hover: hover) and (prefers-reduced-motion: no-preference)", () => {
-  const box = $("[data-svc-float]");
-  const img = $("img", box);
-  const wrap = box.parentElement;
-  const xTo = gsap.quickTo(box, "x", { duration: 0.6, ease: "power3" });
-  const yTo = gsap.quickTo(box, "y", { duration: 0.6, ease: "power3" });
-  const rTo = gsap.quickTo(box, "rotate", { duration: 0.8, ease: "power3" });
-  let px = 0;
-  const move = (e) => {
-    const r = wrap.getBoundingClientRect();
-    const x = e.clientX - r.left - 140;
-    xTo(x); yTo(e.clientY - r.top - 175);
-    rTo(gsap.utils.clamp(-10, 10, (e.clientX - px) * 0.4)); px = e.clientX;
-  };
-  const rows = $$(".svc__row");
-  const enter = (row) => () => {
-    img.src = row.dataset.img;
-    gsap.to(box, { opacity: 1, scale: 1, duration: 0.5, ease: "expo.out" });
-  };
-  const leave = () => gsap.to(box, { opacity: 0, scale: 0.7, duration: 0.4, ease: "power3.out" });
-  rows.forEach((row) => { row.addEventListener("mouseenter", enter(row)); row.addEventListener("mouseleave", leave); });
-  wrap.addEventListener("mousemove", move);
-  return () => wrap.removeEventListener("mousemove", move);
-});
-
 /* ---------- About: parallax + contadores ---------- */
 if (!reduce) {
   gsap.fromTo("[data-parallax] img", { yPercent: -8 }, { yPercent: 0, ease: "none", scrollTrigger: { trigger: "[data-parallax]", start: "top bottom", end: "bottom top", scrub: true } });
